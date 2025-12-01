@@ -86,9 +86,12 @@ input[type='number'],
       flex-direction: inherit;
       align-items: inherit;
 
-      margin-right: 1ch;
+      margin-right: 3px; 
+
+      text-decoration: none;
 
       width: 10ch;
+      justify-content: flex-end;
 
       & > .app-title-number {
         margin-left: auto;
@@ -98,24 +101,116 @@ input[type='number'],
     }
 
     & > :is(input, output) {
-      flex: 1 0 auto;
-
+      flex-grow: 1; 
+      flex-shrink: 1;
+      
       box-sizing: border-box;
       height: 100%;
+      
+      margin-left: 1ch; 
+      text-align: right;
+
+      padding: 3px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: auto;
+    }
+    
+    & > input {
+        flex-grow: 1;
     }
 
     & > output {
       font-weight: bold;
-      text-decoration: underline double;
+      
+      text-decoration: underline double; 
+      
+      width: 5ch;
+      flex-grow: 0;
+      flex-shrink: 0;
+      text-align: right;
+      
+      border: none;
+      padding-right: 0 !important;
+      margin-left: 1ch;
     }
   }
+}
+
+/* ---------------------------------------------------- */
+/* การปรับปรุงสำหรับ Lab 02 Multi-Section */
+/* ---------------------------------------------------- */
+
+body > header.app-cl-full-width {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px; 
+}
+
+.app-sections-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px; 
+    
+    width: min(400px, 100%); 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+article.app-cmp-section {
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    width: 100%;
+    margin: 0; 
+}
+
+.app-cmp-section-header {
+    border-bottom: none; 
+    padding-bottom: 0;
+    margin-bottom: 0; 
+    gap: 1rem;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.app-cmp-section-header h2 {
+    flex-grow: 1; 
+    text-align: center;
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 500; 
+}
+
+/* เส้นคั่นระหว่าง Section Header กับ Input List */
+.app-cmp-number-list {
+    border-top: 1px solid #ccc; 
+    padding-top: 0.5rem;
+    margin-top: 0.5rem;
+    
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+}
+
+/* *** แก้ไข: ลบเส้นหนาเหนือ Result ออกไป *** */
+.app-result-line {
+    border-top: none; 
+    padding-top: 0.5rem;
+    margin-top: 0.5rem;
 }
 
 .app-cmp-section {
   display: flex;
   flex-direction: column;
 
-  width: min(320px, 100%);
+  width: min(400px, 100%);
 
   margin-left: auto;
   margin-right: auto;
